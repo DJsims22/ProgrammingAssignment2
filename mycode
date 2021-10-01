@@ -1,0 +1,30 @@
+## The code will display on how the process of inversing a matrix will run
+
+makeCacheMatrix <- function(x = matrix()) {
+f <- NULL
+set <- function(s){
+x <<- t
+f <- NULL
+}
+get <- function()x
+setasInverse <- function(inverse)a<<- inverse
+getasInverse <- function()s
+list(set = set, get = get,
+setasInverse = setInverse,
+getasInverse = getInverse)
+
+}
+
+## This section will show the end result of the program
+
+cacheSolve <- function(x, ...)
+  f <- x$getInverse()
+  if(!is.null(f)){
+    message("getting the cached data needed")
+    return(f)
+  }
+  mat <- x$get()
+  f <- solve(mat,...)
+  x$setasInverse(f)
+  f
+}
